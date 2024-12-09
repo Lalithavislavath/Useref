@@ -10,11 +10,15 @@ function Filter() {
             inputRef.current.focus()
         }
     }, [])
+
+    const handleChange = (e) => {
+        setInputValue(e.target.value)
+    }
  
 
     return (
         <div>
-          <input type="number"  ref={inputRef}  value={inputValue}  placeholder="Write a divisor" />
+          <input type="number"  ref={inputRef}  value={inputValue} onChange={handleChange} placeholder="Write a divisor" />
          <p>Current Input Value: {inputValue}</p>
         </div>
     )
