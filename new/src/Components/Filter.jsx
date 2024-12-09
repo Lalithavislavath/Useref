@@ -5,10 +5,13 @@ function Filter() {
     const inputRef = useRef(null)
     const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
  
-   
+    useEffect(() => {
+        if (inputRef.current) {
+            inputRef.current.focus()
+        }
+    }, [])
  
-    
- 
+
     return (
         <div>
           <input type="number"  ref={inputRef}  value={inputValue}  placeholder="Write a divisor" />
